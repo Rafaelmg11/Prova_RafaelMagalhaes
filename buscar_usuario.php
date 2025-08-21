@@ -3,7 +3,7 @@
     require_once 'conexao.php';
 
     if ($_SESSION['perfil'] != 1 && $_SESSION['perfil'] !=2){
-        "<script>alert('Acesso Negado'); window.location.href='principal.php'</script>";
+        echo "<script>alert('Acesso Negado'); window.location.href='principal.php'</script>";
         exit();
     }
 
@@ -48,7 +48,7 @@
     <form action="buscar_usuario.php" method="POST">
         <label for="busca">Digite o ID ou NOME (opcional): </label>
         <input type="text" id="busca" name="busca">
-        <button type="submiy">Pesquisar</button>
+        <button type="submit">Pesquisar</button>
     </form>
 
     <?php if(!empty($usuarios)):?>
