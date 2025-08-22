@@ -32,7 +32,7 @@
 
             //SE O USUARIO NÃO FOR ENCONTRADO, EXIBE UM ALERTA
             if (!$usuario){
-                echo "<script>alert('Usuario não encontrado!');'</script>";
+                echo "<script>alert('Usuario não encontrado!');</script>";
             }
         }
     }
@@ -47,8 +47,11 @@
     <link rel="stylesheet" href="styles.css">
     <!--Certifique-se de que o JavaScript está sendo carregado corretamente-->
     <script src="scripts.js"></script>
+    <script src="validacoes.js"></script>
+    
 </head>
 <body>
+    <?php include "barra_menu.php"?>
     <h2>Alterar Usuário</h2>
     <!-- FORMULARIO PARA BUSCAR USUARIOS-->
     <form action="alterar_usuario.php" method="POST">
@@ -60,11 +63,11 @@
     </form>
 
     <?php if ($usuario):?>
-        <form action="processa_alteracao_usuario.php" method="POST">
+        <form action="processa_alteracao_usuario.php" method="POST" id="form_nome">
             <input type="hidden" name="id_usuario" value="<?= htmlspecialchars($usuario['id_usuario']) ?>"> 
 
             <label for="nome">Nome:</label>
-            <input type="text" name="nome" id="nome" value="<?=htmlspecialchars($usuario['nome'])?>" required> 
+            <input type="text" name="nome" id="nome" value="<?=htmlspecialchars($usuario['nome'])?> " pattern="[A-Za-z0-9 ]+" title="Não é permitido usar símbolos." required> 
 
             <label for="email">Email:</label>
             <input type="email" name="email" id="email" value="<?=htmlspecialchars($usuario['email'])?>" required> 
@@ -88,7 +91,7 @@
         </form>
     <?php endif;?>
 
-    <a href="principal.php">Voltar</a>
+    <a href="principal.php" class="voltar">Voltar</a>
   
     
 </body>

@@ -44,35 +44,38 @@
 
 </head>
 <body>
+    <?php include "barra_menu.php"?>
     <h2>Excluir Usuário</h2>
 
     <?php if(!empty($usuarios)):?>
-        <table border="1">
-            <tr>
-                <th>Id</th>
-                <th>Nome</th>
-                <th>Email</th>
-                <th>Perfil</th>
-                <th>Ações</th>
-            </tr>
+        <div class="tabela-container">
+            <table border="1" class="listar-tabela">
+                <tr>
+                    <th>Id</th>
+                    <th>Nome</th>
+                    <th>Email</th>
+                    <th>Perfil</th>
+                    <th>Ações</th>
+                </tr>
 
 
-        <?php foreach ($usuarios as $usuario):?>
-            <tr>
-                <td><?=htmlspecialchars($usuario['id_usuario'])?></td>
-                <td><?=htmlspecialchars($usuario['nome'])?></td>
-                <td><?=htmlspecialchars($usuario['email'])?></td>
-                <td><?=htmlspecialchars($usuario['id_perfil'])?></td>
-                <td><a href="excluir_usuario.php?id=<?=htmlspecialchars($usuario['id_usuario'])?>" onclick="return confirm('Tem certeza que deseja excluir este usuário?')">Excluir</a></td>
-            </tr>
-        <?php endforeach;?>
-        </table>
+            <?php foreach ($usuarios as $usuario):?>
+                <tr>
+                    <td><?=htmlspecialchars($usuario['id_usuario'])?></td>
+                    <td><?=htmlspecialchars($usuario['nome'])?></td>
+                    <td><?=htmlspecialchars($usuario['email'])?></td>
+                    <td><?=htmlspecialchars($usuario['id_perfil'])?></td>
+                    <td><a href="excluir_usuario.php?id=<?=htmlspecialchars($usuario['id_usuario'])?>" onclick="return confirm('Tem certeza que deseja excluir este usuário?')">Excluir</a></td>
+                </tr>
+            <?php endforeach;?>
+            </table>
+        </div>
 
     <?php else:?>
         <p>Nenhum Usuário encontrado</p>
     <?php endif;?>
 
-    <a href="principal.php">Voltar</a>
+    <a href="principal.php" class="voltar">Voltar</a>
         
 </body>
 </html>

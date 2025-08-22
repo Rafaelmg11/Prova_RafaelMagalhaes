@@ -23,10 +23,11 @@
         $stmt -> bindParam(':senha', $senha);
         $stmt -> bindParam(':id_perfil', $id_perfil);
 
-        if($stmt->execute()){
+        try{
+            $stmt -> execute();
             echo "<script>alert('Usuário Cadastrado com Sucesso!');</script>";
-        }else{
-            echo "<script>alert('Erro ao Cadastrar o Usuário');</script>";
+        } catch (PDOException $e){
+            echo "<script>alert('Erro ao Cadastrar o Usuário. Email não pode ser repetido');</script>";
         }
     }
 
@@ -39,12 +40,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro de Usuário</title>
     <link rel="stylesheet" href="styles.css">
+    
 </head>
 <body>
+    <?php include "barra_menu.php"?>
     <h2>Cadastrar Usuário</h2>
-    <form action="cadastro_usuario.php" method="POST">
+    <form action="cadastro_usuario.php" method="POST" id="form_nome" >
         <label for="nome">Nome: </label>
-        <input type="text" id="nome" name="nome" required>
+        <input type="text" id="nome" name="nome" pattern="[A-Za-z0-9]+" title="Não é permitido usar símbolos."  required>
 
         <label for="email">E-mail: </label>
         <input type="email" id="email" name="email" required>
@@ -64,6 +67,8 @@
         <button type="reset">Cancelar</button>
     </form>    
 
-    <a href="principal.php">Voltar</a>
+    <a href="principal.php" class="voltar">Voltar</a>
+
+    <script src="validacoes.js"></script>
 </body>
 </html>

@@ -22,3 +22,48 @@ function validarFuncionario() {
 
     return true;
 }
+
+
+// Função que bloqueia letras e números juntos
+function letras_numeros() {
+    const form = document.getElementById("form_busca");
+    if (!form) return; // garante que o formulário existe
+
+    form.addEventListener("submit", function(e) {
+        const input = document.getElementById("busca").value.trim();
+
+        const temLetra = /[A-Za-z]/.test(input);
+        const temNumero = /[0-9]/.test(input);
+
+        if (temLetra && temNumero) {
+            alert("Erro: não é permitido usar letras e números juntos!");
+            e.preventDefault(); // bloqueia envio do formulário
+        }
+    });
+}
+
+// Chama a função quando a página termina de carregar
+window.addEventListener("DOMContentLoaded", letras_numeros);
+
+
+// Função que bloqueia letras e números juntos
+function sem_numeros() {
+    const form = document.getElementById("form_nome");
+    if (!form) return; // garante que o formulário existe
+
+    form.addEventListener("submit", function(e) {
+        const input = document.getElementById("nome").value.trim();
+
+
+        const temNumero = /[0-9]/.test(input);
+
+        if (temNumero) {
+            alert("Erro: não é permitido usar números no campo de nome!");
+            e.preventDefault(); // bloqueia envio do formulário
+        }
+    });
+}
+
+window.addEventListener("DOMContentLoaded", function() {
+    sem_numeros();
+});

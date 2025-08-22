@@ -168,3 +168,148 @@ button {
 button:hover {
     background-color: #0056b3; /* Azul mais escuro ao passar o mouse */
 }
+
+/* Centraliza o formulário na tela */
+form {
+    width: 500px; /* Define uma largura fixa */
+    margin: 50px auto; /* Centraliza na tela */
+    padding: 20px;
+    background-color: #f9f9f9; /* Fundo suave */
+    border-radius: 10px; /* Cantos arredondados */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Sombra leve */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centraliza os elementos dentro do formulário */
+}
+
+
+/* Ajusta as labels */
+label {
+    display: block; /* Mantém acima do campo */
+    font-weight: bold;
+    margin-bottom: 5px; /* Espaço entre label e campo */
+}
+
+/* Ajusta os campos de entrada */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+select {
+    width: 80%; /* Ocupa toda a largura do formulário */
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/* Ajusta os botões */
+button {
+    width: 80%;
+    padding: 10px;
+    background-color: #007bff; /* Azul bonito */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background-color: #0056b3; /* Azul mais escuro ao passar o mouse */
+}
+
+
+/*Container da Tabela - DIV*/
+.tabela-container {
+    max-width: 940px; /*Largura maxima do container*/
+    max-height: 400px;   /*Altura maxima do container*/
+    overflow-y: auto;  /*Rolagem Vertical*/
+    overflow-x: hidden; /*Proibe rolagem horizontal*/
+    margin: 30px auto; /*Adiciona espaço em cima e abaixo*/ /*Centraliza*/
+    border-radius: 8px; /*Arredondamento das bordas*/
+    box-shadow: 0 0 8px rgba(0,0,0,0.1); /*Sombra - Cor e Tamanho*/
+    background: #fff; /*Cor de Fundo*/
+}
+
+
+/*Tabela*/
+.listar-tabela {
+    width: 97%; /*Ocupa quase toda a largura do container*/
+    height: 97%; /*Ocupa quase toda a altura do container*/
+    border-collapse: collapse; /*Remove espaçamento entre as bordas das células*/
+    margin: auto; /*Centraliza*/
+    border-top: 8px solid #fff; /*Borda Superior*/
+    border-bottom: 8px solid #fff; /*Borda Inferior*/
+}
+
+/*Celulas da Tabela && Cabeçalho*/
+.listar-tabela th,
+.listar-tabela td {
+    padding: 12px; /*Espaçamento interno das células*/
+    text-align: center; /*Centraliza texto*/
+    border-bottom: 1px solid #ddd; /*Linha separando as linhas*/
+}
+
+/*Cabeçalho da tabela*/
+.listar-tabela th {
+    background-color: #1E3A8A; /*Cor de Fundo*/
+    color: white; /*Cor da fonte*/
+    position: sticky; /*Fixa ao topo*/
+    top: 0; /*Gruda no topo*/
+    z-index: 2; /*Garante que fica sobre as linhas*/
+    border-color: black; /*Cor da Borda*/
+}
+
+/*Linha da tabela ao passar o mouse*/
+.listar-tabela tr:hover {
+    background-color: #dbeafe; /*Cor de Fundo*/
+}
+
+/*Links e Botões*/
+.listar-tabela a,
+.listar-tabela button {
+    padding: 6px 10px; /*Espaçamento interno do botão/link*/
+    margin: 2px; /*Espaçamento externo entre os botões/link*/
+    font-size: 14px; /*Tamnho da fonte*/
+    border: none; /*Borda*/
+    border-radius: 4px;  /*Arredondamento das bordas*/
+    text-decoration: none; /*Remove sublinhado dos links*/
+    color: white; /*Cor do texto*/
+    background-color: #3B82F6; /*Cor de Fundo*/
+    cursor: pointer; /*Cursor muda para indicar clicavel*/
+}
+
+/*Links e Botões ao passar o mouse*/
+.listar-tabela a:hover,
+.listar-tabela button:hover {
+    background-color: #2563EB; /*Cor de Fundo*/
+}
+
+/*Linhas Pares*/
+.listar-tabela tr:nth-child(even) {
+    background-color: #e2e8f0; /*Cor de Fundo*/
+}
+
+/*Linhas pares ao passar o mouse*/
+.listar-tabela tr:nth-child(even):hover {
+    background-color: #dbeafe; /*Cor de Fundo*/
+}
+
+.voltar{
+    display: block; /*Permite Width*/
+    margin: auto; /*Centraliza*/
+    padding: 6px 10px; /*Espaçamento interno do botão*/
+    font-size: 18px; /*Tamnho da fonte*/
+    border-radius: 8px;  /*Arredondamento das bordas*/
+    text-decoration: none; /*Remove sublinhado do link*/
+    color: white; /*Cor do texto*/
+    background-color: #3B82F6; /*Cor de Fundo*/
+    cursor: pointer; /*Cursor muda para indicar clicavel*/
+    width: 100px;
+}
+
+.voltar:hover{
+    
+}
