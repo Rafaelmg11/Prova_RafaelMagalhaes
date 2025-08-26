@@ -49,7 +49,7 @@
     <!-- FORMULARIO PARA BUSCAR USUARIOS-->
     <form action="buscar_usuario.php" method="POST" id="form_busca">
         <label for="busca">Digite o ID ou NOME (opcional): </label>
-        <input type="text" id="busca" name="busca" pattern="[A-Za-z0-9 ]+" title="Não é permitido usar símbolos.">
+        <input type="text" id="busca" name="busca" pattern="[A-Za-zÀ-ÿ0-9 ]+" title="Não é permitido usar símbolos.">
         <button type="submit">Pesquisar</button>
     </form>
 

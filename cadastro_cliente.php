@@ -10,7 +10,6 @@
         exit();
     }
 
-
     if ($_SERVER["REQUEST_METHOD"] == "POST"){
         $nome = $_POST['nome'];
         $endereco = $_POST['endereco'];
@@ -21,8 +20,7 @@
         $ver = $pdo->prepare("SELECT COUNT(*) FROM cliente WHERE email = :email");
         $ver->bindParam(':email', $email);
         $ver->execute();
-        $existe = $ver -> fetchAll(PDO:: FETCH_ASSOC);
-
+        $existe = $ver -> fetchColumn();
 
         if ($existe > 0) {
             echo "<script>alert('Erro: já existe um cliente com esse e-mail.'); window.location.href='cadastro_cliente.php';</script>";
@@ -53,6 +51,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastrar Cliente</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="validacoes.js"></script>
 </head>
 <body>
     <?php include 'barra_menu.php'?>
@@ -77,7 +76,6 @@
 
     <a href="principal.php" class="voltar">Voltar</a>
 
-    <!--$existe = $ver->fetchColumn();-->
 </body>
 </html>
 

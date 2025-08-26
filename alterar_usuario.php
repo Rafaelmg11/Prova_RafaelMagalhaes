@@ -67,7 +67,7 @@
             <input type="hidden" name="id_usuario" value="<?= htmlspecialchars($usuario['id_usuario']) ?>"> 
 
             <label for="nome">Nome:</label>
-            <input type="text" name="nome" id="nome" value="<?=htmlspecialchars($usuario['nome'])?> " pattern="[A-Za-z0-9 ]+" title="Não é permitido usar símbolos." required> 
+            <input type="text" name="nome" id="nome" value="<?=htmlspecialchars($usuario['nome'])?> " pattern="[A-Za-zÀ-ÿ0-9 ]+" title="Não é permitido usar símbolos." required> 
 
             <label for="email">Email:</label>
             <input type="email" name="email" id="email" value="<?=htmlspecialchars($usuario['email'])?>" required> 
