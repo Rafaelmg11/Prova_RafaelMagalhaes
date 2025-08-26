@@ -27,13 +27,12 @@
             exit();
         } 
 
-        $sql = "INSERT INTO cliente(nome_cliente, endereco, telefone, email, id_funcionario_responsavel) VALUES (:nome, :endereco, :telefone, :email, :id_funcionario_responsavel)";
+        $sql = "INSERT INTO cliente(nome_cliente, endereco, telefone, email) VALUES (:nome, :endereco, :telefone, :email)";
         $stmt = $pdo -> prepare($sql);
         $stmt -> bindParam (':nome',$nome);
         $stmt -> bindParam (':endereco',$endereco);
         $stmt -> bindParam (':telefone', $telefone);
         $stmt -> bindParam (':email', $email);
-        $stmt -> bindParam (':id_funcionario_responsavel', $id_usuario);
 
         try{
             $stmt -> execute();

@@ -23,9 +23,9 @@
     if (isset($_GET['id']) && is_numeric($_GET['id'])){
         $id_cliente = $_GET['id'];
 
-        //EXCLUI O USUARIO DO BANCO DE DADOS
+        //EXCLUI O CLIENTE DO BANCO DE DADOS
         $sql = "DELETE FROM cliente WHERE id_cliente = :id";
-        $stmt = pdo -> prepare($sql);
+        $stmt = $pdo -> prepare($sql);
         $stmt -> bindParam(':id', $id_cliente,PDO::PARAM_INT);
 
         if ($stmt -> execute()){
@@ -41,7 +41,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Excluir Usuario</title>
+    <title>Excluir Cliente</title>
     <link rel="stylesheet" href="styles.css">
 
 </head>
@@ -55,26 +55,28 @@
                 <tr>
                     <th>Id</th>
                     <th>Nome</th>
+                    <th>Endereco</th>
+                    <th>Telefone</th>
                     <th>Email</th>
-                    <th>Perfil</th>
                     <th>Ações</th>
                 </tr>
 
 
             <?php foreach ($clientes as $cliente):?>
                 <tr>
-                    <td><?=htmlspecialchars($cliente['id_usuario'])?></td>
-                    <td><?=htmlspecialchars($cliente['nome'])?></td>
+                    <td><?=htmlspecialchars($cliente['id_cliente'])?></td>
+                    <td><?=htmlspecialchars($cliente['nome_cliente'])?></td>
+                    <td><?=htmlspecialchars($cliente['endereco'])?></td>
+                    <td><?=htmlspecialchars($cliente['telefone'])?></td>
                     <td><?=htmlspecialchars($cliente['email'])?></td>
-                    <td><?=htmlspecialchars($cliente['id_perfil'])?></td>
-                    <td><a href="excluir_usuario.php?id=<?=htmlspecialchars($cliente['id_usuario'])?>" onclick="return confirm('Tem certeza que deseja excluir este usuário?')">Excluir</a></td>
+                    <td><a href="excluir_cliente.php?id=<?=htmlspecialchars($cliente['id_cliente'])?>" onclick="return confirm('Tem certeza que deseja excluir este cliente?')">Excluir</a></td>
                 </tr>
             <?php endforeach;?>
             </table>
         </div>
 
     <?php else:?>
-        <p>Nenhum Usuário encontrado</p>
+        <p>Nenhum Cliente encontrado</p>
     <?php endif;?>
 
     <a href="principal.php" class="voltar">Voltar</a>
