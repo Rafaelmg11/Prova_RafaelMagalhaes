@@ -46,3 +46,7 @@ Para: admin@admin
 Olá! Sua nova senha temporária é: tUC1JS6E
 
 ----------------------
+Para: carlos@empresa.com
+Olá! Sua nova senha temporária é: ClqxQS5A
+
+----------------------

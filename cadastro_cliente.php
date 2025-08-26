@@ -5,8 +5,8 @@
     //VERIFICA SE O USUARIO TEM PERMISSÃO
     //SUPONDO QUE O PERFIL 1 SEJA O adm
 
-    if ($_SESSION['perfil']!=1 and $_SESSION['perfil']!=2){
-        echo "Acesso Negado!";
+    if ($_SESSION['perfil']!=1 and $_SESSION['perfil']!=2 and $_SESSION['perfil']!=4) {
+        echo "<script>alert('Acesso Negado'); window.location.href='principal.php'</script>";
         exit();
     }
 
