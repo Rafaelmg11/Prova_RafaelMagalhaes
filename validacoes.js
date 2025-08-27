@@ -88,4 +88,21 @@ function telefone(variavel){
     return variavel
 }
 
+<input type="text" id="telefone" name="telefone" required 
+       oninput="mascara(this, telefone)" 
+       maxlength="15" placeholder="Digite seu número de telefone">
+
+
+function mascara(o, f) {
+    setTimeout(function() {
+        o.value = f(o.value);
+    }, 1);
+}
+
+function telefone(v) {
+    v = v.replace(/\D/g, "");                // remove tudo que não for dígito
+    v = v.replace(/^(\d{2})(\d)/g, "($1) $2"); // coloca parênteses no DDD
+    v = v.replace(/(\d{4,5})(\d{4})$/, "$1-$2"); // coloca o hífen no final
+    return v;
+}
 
