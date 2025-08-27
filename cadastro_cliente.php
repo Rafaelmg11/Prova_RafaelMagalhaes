@@ -65,7 +65,7 @@
         <input type="text" id="endereco" name="endereco" required placeholder="Digite o endereço">
 
         <label for="telefone">Telefone: </label>
-        <input type="text" id="telefone" name="telefone" required maxlength="15" placeholder="Digite o número de telefone">
+        <input type="text" id="telefone" name="telefone" required maxlength="13" onkeypress="mascara(this, celular)" placeholder="Digite o número de telefone">
 
 
         <label for="email">E-mail: </label>

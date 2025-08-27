@@ -33,6 +33,7 @@
     
     <nav>
         <ul class="menu">
+            <li style="background-color: red;"><a href="logout.php">Logout</a></li>
             <li><a href="principal.php">Inicio</a></li>
             <?php foreach($opcoes_menu as $categoria=>$arquivos):?>
             <li class="dropdown">
