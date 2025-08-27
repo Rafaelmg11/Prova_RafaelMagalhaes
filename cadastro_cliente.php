@@ -59,17 +59,17 @@
     <h2>Cadastro de Cliente</h2>
     <form action="cadastro_cliente.php" method="POST" id="form_nome">
         <label for="nome">Nome: </label>
-        <input type="text" id="nome" name="nome" pattern="[A-Za-zÀ-ÿ0-9 ]+" title="Não é permitido usar símbolos."  required>
+        <input type="text" id="nome" name="nome" pattern="[A-Za-zÀ-ÿ0-9 ]+" title="Não é permitido usar símbolos."  required placeholder="Digite o nome">
         
         <label for="endereco">Endereço: </label>
-        <input type="text" id="endereco" name="endereco" required>
+        <input type="text" id="endereco" name="endereco" required placeholder="Digite o endereço">
 
         <label for="telefone">Telefone: </label>
-        <input type="text" id="telefone" name="telefone" required onkeypress="mascara(this, telefone)" maxlength="15" placeholder="Digite seu número de telefone">
+        <input type="text" id="telefone" name="telefone" required maxlength="15" placeholder="Digite o número de telefone">
 
 
         <label for="email">E-mail: </label>
-        <input type="email" id="email" name="email" required>
+        <input type="email" id="email" name="email" required placeholder="Digite o e-mail">
 
         <button type="submit">Salvar</button>
         <button type="reset">Cancelar</button>
