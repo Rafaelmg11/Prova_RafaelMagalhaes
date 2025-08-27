@@ -51,6 +51,8 @@
     <title>Cadastrar Cliente</title>
     <link rel="stylesheet" href="styles.css">
     <script src="validacoes.js"></script>
+
+
 </head>
 <body>
     <?php include 'barra_menu.php'?>
@@ -63,7 +65,7 @@
         <input type="text" id="endereco" name="endereco" required>
 
         <label for="telefone">Telefone: </label>
-        <input type="text" id="telefone" name="telefone" required>
+        <input type="text" id="telefone" name="telefone" required onkeypress="mascara(this, telefone)" maxlength="15" placeholder="Digite seu número de telefone">
 
 
         <label for="email">E-mail: </label>

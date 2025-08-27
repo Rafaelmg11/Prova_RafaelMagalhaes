@@ -24,7 +24,7 @@
             }else{
                 $sql = "SELECT * FROM usuario WHERE nome LIKE :busca_nome";
                 $stmt = $pdo -> prepare($sql);
-                $stmt -> bindValue(':busca_nome', "%$busca%",PDO::PARAM_STR);
+                $stmt -> bindValue(':busca_nome', "$busca%",PDO::PARAM_STR);
             }
 
             $stmt -> execute();
@@ -45,7 +45,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alterar Usuario</title>
     <link rel="stylesheet" href="styles.css">
-    <!--Certifique-se de que o JavaScript está sendo carregado corretamente-->
     <script src="scripts.js"></script>
     <script src="validacoes.js"></script>
     

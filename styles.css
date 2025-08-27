@@ -83,6 +83,7 @@ header {
     padding: 0;
     margin: 0;
     width: 200px;
+    z-index: 9999;
 }
 
 .dropdown-menu li a {
@@ -308,8 +309,4 @@ button:hover {
     background-color: #3B82F6; /*Cor de Fundo*/
     cursor: pointer; /*Cursor muda para indicar clicavel*/
     width: 100px;
-}
-
-.voltar:hover{
-    
 }
