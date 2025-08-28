@@ -71,7 +71,12 @@
                     <td><?=htmlspecialchars($cliente['endereco'])?></td>
                     <td><?=htmlspecialchars($cliente['telefone'])?></td>
                     <td><?=htmlspecialchars($cliente['email'])?></td>
-                    <td><a href="excluir_cliente.php?id=<?=htmlspecialchars($cliente['id_cliente'])?>" onclick="return confirm('Tem certeza que deseja excluir este cliente?')">Excluir</a></td>
+
+                    
+                    <td>
+                        <a href="alterar_cliente.php?id=<?=htmlspecialchars($cliente['id_cliente']);?>">Alterar</a>
+                        <a href="excluir_cliente.php?id=<?=htmlspecialchars($cliente['id_cliente'])?>" onclick="return confirm('Tem certeza que deseja excluir este cliente?')">Excluir</a>
+                    </td>
                 </tr>
             <?php endforeach;?>
             </table>

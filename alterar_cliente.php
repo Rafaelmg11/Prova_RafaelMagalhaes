@@ -61,7 +61,7 @@
     </form>
 
     <?php if ($cliente):?>
-        <form action="processa_alteracao_cliente" method="POST" id="form_nome">
+        <form action="processa_alteracao_cliente.php" method="POST" id="form_nome">
             <input type="hidden" name="id_cliente" value="<?= htmlspecialchars($cliente['id_cliente']) ?>"> 
 
             <label for="nome">Nome:</label>
@@ -76,8 +76,6 @@
             <label for="email">Email:</label>
             <input type="email" name="email" id="email" value="<?=htmlspecialchars($cliente['email'])?>" required> 
 
-            <!-- <label for="id_funcionario_responsavel">ID Funcionario Responsavel:</label>
-            <input type="text" name="id_funcionario_responsavel" id="id_funcionario_responsavel" value="<?=htmlspecialchars($cliente['id_funcionario_responsavel'])?>" required pattern="[0-9]+" title="Só é permetido números" >  -->
 
             <button type="submit">Alterar</button>
             <button type="reset">Cancelar</button>

@@ -17,7 +17,6 @@
 
         //ATUALIZA OS DADOS DO CLIENTE
         $sql = "UPDATE cliente SET nome_cliente = :nome, endereco = :endereco, telefone = :telefone, email = :email WHERE id_cliente = :id_cliente";
-        //$sql = "UPDATE cliente SET nome_cliente = :nome, endereco = :endereco, telefone = :telefone, email = :email, id_funcionario_responsavel = :id_funcionario_responsavel WHERE id_usuario = :id";
         $stmt = $pdo -> prepare($sql);
         $stmt -> bindParam(':nome',$nome);
         $stmt -> bindParam(':endereco',$endereco);
